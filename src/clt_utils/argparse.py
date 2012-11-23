@@ -1,8 +1,5 @@
-from . import get_production_version
 import argparse
 import os
-
-VERSION = get_production_version()
 
 
 def is_dir(string):

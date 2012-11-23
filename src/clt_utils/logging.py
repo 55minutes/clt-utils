@@ -1,8 +1,5 @@
 from . import env
-from . import get_production_version
 from colors import green
-
-VERSION = get_production_version()
 
 
 def log(level, msg):
