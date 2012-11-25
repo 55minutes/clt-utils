@@ -48,9 +48,8 @@ setup(
     ],
     license='All Rights Reserved (c) 2012 55 Minutes',
 
-    package_dir={'': 'src'},
-    packages=find_packages('src'),
+    packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
-    install_requires=['ansicolors'],
+    install_requires=['ansicolors', 'distribute'],
 )
