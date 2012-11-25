@@ -19,7 +19,7 @@ else:
     LONG_DESCRIPTION = SHORT_DESCRIPTION
 
 PROJECT_URL = 'https://github.com/55minutes/clt-utils'
-DOWNLOAD_URL = '{}/archive/master.tar.gz'.format(PROJECT_URL)
+DOWNLOAD_URL = '{0}/archive/master.tar.gz'.format(PROJECT_URL)
 
 # Setup the project directory
 setup(
