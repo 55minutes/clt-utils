@@ -4,6 +4,7 @@ from ConfigParser import SafeConfigParser
 from setuptools import setup, find_packages
 import codecs
 import os
+import sys
 
 version_config = SafeConfigParser()
 version_config.readfp(open(
@@ -20,6 +21,10 @@ else:
 
 PROJECT_URL = 'https://github.com/55minutes/clt-utils'
 DOWNLOAD_URL = '{0}/archive/master.tar.gz'.format(PROJECT_URL)
+
+REQUIRES = ['ansicolors', 'distribute']
+if sys.version_info < (2, 7):
+    REQUIRES.append('argparse')
 
 # Setup the project directory
 setup(
@@ -51,5 +56,5 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
-    install_requires=['ansicolors', 'distribute'],
+    install_requires=REQUIRES,
 )
