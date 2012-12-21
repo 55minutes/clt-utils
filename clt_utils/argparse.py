@@ -1,3 +1,4 @@
+from datetime import datetime
 import argparse
 import os
 
@@ -17,7 +18,7 @@ def is_file(string):
     Type check for a valid file for ArgumentParser.
     """
     if not os.path.isfile(string):
-        msg = '{0} is not a file'.format(string)
+        msg = u'{0} is not a file'.format(string)
         raise argparse.ArgumentTypeError(msg)
     return string
 
@@ -27,6 +28,14 @@ def gt_zero(string):
     Type check for int > 0 for ArgumentParser.
     """
     if not int(string) > 0:
-        msg = 'limit must be > 0'
+        msg = u'limit must be > 0'
         raise argparse.ArgumentTypeError(msg)
     return int(string)
+
+
+def isodate(string):
+    try:
+        return datetime.strptime(string, '%Y-%m-%d').date()
+    except ValueError:
+        msg = u'date input must in the format of yyyy-mm-dd'
+        raise argparse.ArgumentTypeError(msg)
