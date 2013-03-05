@@ -1,5 +1,5 @@
 from . import env
-from colors import green
+from colors import green, yellow
 
 
 def log(level, msg):
@@ -13,6 +13,10 @@ def debug(msg):
 
 def info(msg):
     log('INFO', msg)
+
+
+def warning(msg):
+    log('INFO', yellow(msg))
 
 
 def print_header(label):
