@@ -1,3 +1,7 @@
+1.0.3 (2013-03-05)
+==================
+* Added logging warning
+
 1.0.2 (2012-12-26)
 ==================
 * Fixed bug with argparse self reference
